@@ -11,7 +11,11 @@
         fileList.include("**/*.js");
         fileList.exclude(["node_modules"]);
 
-        lint.validateFileList(fileList, nodeListOptions(), {}) || fail("Lint failed");
+        var passed = lint.validateFileList(fileList, nodeListOptions(), {});
+        if(!passed) {
+            fail("Lint failed");
+        }
+
     });
 
     desc("Integration");
