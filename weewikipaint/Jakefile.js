@@ -2,7 +2,7 @@
 (function () {
     "use strict";
 
-    task("default", ["lint"]);
+    task("default", ["lint", "test"]);
 
     desc("Lint everything");
     task("lint", [], function () {
@@ -21,6 +21,11 @@
     desc("Integration");
     task("integrate",["default"], function () {
        console.log("Integration stuff goes here");
+    });
+
+    desc("Test them all");
+    task("test",[], function(){
+       console.log("testing goes here");
     });
 
     function nodeListOptions() {
